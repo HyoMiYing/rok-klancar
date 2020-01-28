@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Rok Klančar</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'workblog/style.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Homepage"> 
+        <meta name="keywords" content="programming, rok, rok klančar, klancar, work blog">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- Favicon -->
+        <link href="{% static 'workblog/favicon.ico' %}" rel="shortcut icon" type="image/png" />
+        <!-- Custom font -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-98643439-2"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+ 		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+		
+  		gtag('config', 'UA-98643439-2');
+	</script>
+
+    </head>
+    <body>
+        <!-- Navigation bar (left side) -->
+        <nav>
+            <ul>
+                <!-- Orange button to homesite -->
+                <li id="home"><a id="home_btn" href="{% url 'workblog:index' %}">Rok Klančar</a></li>
+                <li><a href="{% url 'workblog:projects' %}">Projects</a></li>
+                <li><a href="{% url 'workblog:blog' %}">Work Blog</a></li>
+                <li><a href="https://drive.google.com/file/d/1DkWjX1JhiVdwXMJFEwRSnQN1etwtJ2XK/view?usp=sharing" target="_blank">Resume</a></li>
+            </ul>
+        </nav>
+        <!-- Content (right side) -->
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+    </body>
+</html>
