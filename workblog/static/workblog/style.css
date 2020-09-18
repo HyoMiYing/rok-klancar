@@ -187,3 +187,32 @@ a:visited {
         padding: 6px 7px;
     }
 }
+
+/* Sticker game */
+#game-ui {
+    height: 200px;
+    text-align: center;
+}
+
+.card {
+    width: 20px;
+    height: 20px;
+    margin-left: 2px;
+    margin-right: 2px;
+    background-color: black;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: grey;
+}
+
+.clicked {
+    background-color: red;
+}
+
+#main-form {
+    height: 130px;
+    text-align: center;
+}
