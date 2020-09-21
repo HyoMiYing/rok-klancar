@@ -83,25 +83,31 @@ function addClickEventListenerToCards() {
 }
 
 function createCards(currentGamePosition) {
-    gameForm.innerHTML = '';
-    gameTitle.style.visibility = 'visible';
-    gameSubtitle.style.visibility = 'visible';
-    submitButton.style.visibility = 'visible';
-    currentGamePosition.forEach((element, index) => {
-        for (i = 0; i < element; i++) {
-            var cardElement = document.createElement('div');
-            cardElement.id = 'row'+index+'number'+i;
-            cardElement.className = 'card';
-            gameForm.appendChild(cardElement);
-        }
-    });
-    breakSpaceTheCards();
-    addClickEventListenerToCards();
+    if (currentGamePosition.every(item => item === 0)) {
+        gameTitle.style.visibility = 'hidden';
+        gameSubtitle.style.visibility = 'hidden';
+        gameForm.innerHTML = '<br>Game over, you won! <br> You must be really smart. Did you do it on your first try? <br> Please, let me know about your victory via my email, <i>rklancar@gmail.com</i> <br> AI made by my friend, <a href="https://github.com/golobluka">Luka</a>. <br> He is studying mathematics at University of Ljubljana <br><br><a onclick="createCards([1, 3, 5, 7])">Play again</a> ';
+        submitButton.style.visibility = 'hidden';
+    } else {
+        gameForm.innerHTML = '';
+        gameTitle.style.visibility = 'visible';
+        gameSubtitle.style.visibility = 'visible';
+        submitButton.style.visibility = 'visible';
+        currentGamePosition.forEach((element, index) => {
+            for (i = 0; i < element; i++) {
+                var cardElement = document.createElement('div');
+                cardElement.id = 'row'+index+'number'+i;
+                cardElement.className = 'card';
+                gameForm.appendChild(cardElement);
+            }
+        });
+        breakSpaceTheCards();
+        addClickEventListenerToCards();
+    }
 }
 
 // Runs at file load
 createCards(currentGamePosition);
-
 
 
 
@@ -150,11 +156,6 @@ function machinesTurn(currentGamePosition) {
         gameTitle.style.visibility = 'hidden';
         gameSubtitle.style.visibility = 'hidden';
         gameForm.innerHTML = '<br>Game over, you lost! <br> But don\'t worry, you had a tough opponent. <br> AI made by my friend, <a href="https://github.com/golobluka">Luka</a>. <br> He is studying mathematics at University of Ljubljana <br><br><a onclick="createCards([1, 3, 5, 7])">Play again</a> ';
-        submitButton.style.visibility = 'hidden';
-    } else if (currentGamePosition == [0, 0, 0, 0]) {
-        gameTitle.style.visibility = 'hidden';
-        gameSubtitle.style.visibility = 'hidden';
-        gameForm.innerHTML = '<br>Game over, you won! <br> You must be really smart. Did you do it on your first try? <br> Please, let me know about your victory via my email, <i>rklancar@gmail.com</i> <br> AI made by my friend, <a href="https://github.com/golobluka">Luka</a>. <br> He is studying mathematics at University of Ljubljana <br><br><a onclick="createCards([1, 3, 5, 7])">Play again</a> ';
         submitButton.style.visibility = 'hidden';
     } else {
         let allCards = document.getElementsByClassName('card');
