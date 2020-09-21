@@ -2,6 +2,8 @@ var currentGamePosition = [1, 3, 5, 7];
 var gameForm = document.getElementById('main-form');
 const errorDiv = document.getElementById('id-error');
 let submitButton = document.getElementById('submit-button');
+const gameTitle = document.getElementById('game-title');
+const gameSubtitle = document.getElementById('game-subtitle');
 
 function turnListOfIntegersIntoString(list) {
     let stringFromList = list.join('');
@@ -82,10 +84,15 @@ function addClickEventListenerToCards() {
 
 function createCards(currentGamePosition) {
     if (currentGamePosition == [0, 0, 0, 0]) {
-        gameForm.innerHTML = 'Game over';
+        gameTitle.style.visibility = 'hidden';
+        gameSubtitle.style.visibility = 'hidden';
+        gameForm.innerHTML = '<br>Game over, you won! <br> You must be really smart. Did you do it on your first try? <br> Please, let me know about your victory via my email, <i>rklancar@gmail.com</i> <br> AI made by my friend, <a href="https://github.com/golobluka">Luka</a>. <br> He is studying mathematics at University of Ljubljana <br><br><a onclick="createCards([1, 3, 5, 7])">Play again</a> ';
         submitButton.style.visibility = 'hidden';
     } else {
         gameForm.innerHTML = '';
+        gameTitle.style.visibility = 'visible';
+        gameSubtitle.style.visibility = 'visible';
+        submitButton.style.visibility = 'visible';
         currentGamePosition.forEach((element, index) => {
             for (i = 0; i < element; i++) {
                 var cardElement = document.createElement('div');
@@ -125,7 +132,7 @@ createCards(currentGamePosition);
 // AI mechanism
 function turnAllCardsToGreen(allCards) {
     for (i = 0; i < allCards.length; i++) {
-        allCards[i].style.backgroundColor = 'green';
+        allCards[i].style.backgroundColor = '#709dac';
     }
 }
 
@@ -133,7 +140,7 @@ function visuallyRemoveCards(json) {
     let rowValue = json['row'] - 1;
     let cardsInRow = document.querySelectorAll('[id^="row'+rowValue+'"]')
     for (i = 0; i < json['number_of_cards']; i++) {
-        cardsInRow[i].style.backgroundColor = 'red';
+        cardsInRow[i].style.backgroundColor = '#FF8C00';
     }
     setTimeout(function() { 
         actuallyRemoveCards(json['row']-1, json['number_of_cards']);
@@ -146,13 +153,12 @@ function actuallyRemoveCards(row, amount) {
 }
 
 function machinesTurn(currentGamePosition) {
-    console.log(currentGamePosition);
     if (currentGamePosition.every(item => item === 0)) {
-        console.log('Game is over');
-        gameForm.innerHTML = 'Game over';
+        gameTitle.style.visibility = 'hidden';
+        gameSubtitle.style.visibility = 'hidden';
+        gameForm.innerHTML = '<br>Game over, you lost! <br> But don\'t worry, you had a tough opponent. <br> AI made by my friend, <a href="https://github.com/golobluka">Luka</a>. <br> He is studying mathematics at University of Ljubljana <br><br><a onclick="createCards([1, 3, 5, 7])">Play again</a> ';
         submitButton.style.visibility = 'hidden';
     } else {
-        console.log('Game is not over');
         let allCards = document.getElementsByClassName('card');
         turnAllCardsToGreen(allCards);
         getMachineAnswer(currentGamePosition, visuallyRemoveCards);

@@ -119,6 +119,12 @@ a:visited {
     flex-direction: column;
 }
 
+/* New center */
+#center {
+    text-align: center;
+}
+
+
 /* THIRD ROW */
 .third-row {
     display: flex;
@@ -189,30 +195,49 @@ a:visited {
 }
 
 /* Sticker game */
+
 #game-ui {
-    height: 200px;
     text-align: center;
+    padding: 1rem;
+    border: 5px dashed #a1b6bd;
+}
+
+#game-ui a{
+    cursor: pointer;
 }
 
 .card {
-    width: 20px;
-    height: 20px;
-    margin-left: 2px;
-    margin-right: 2px;
+    width: 2rem;
+    height: 2rem;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
     background-color: black;
     display: inline-block;
     cursor: pointer;
 }
 
 .card:hover {
-    background-color: grey;
+    background-color:  #FF8C00;
 }
 
 .clicked {
-    background-color: red;
+    background-color:  #FF8C00;
 }
 
 #main-form {
-    height: 130px;
     text-align: center;
+    height: 11.5rem;
+}
+
+#submit-button {
+    background-color: #ffb357;
+    color: white;
+    border: none;
+    padding: 4px;
+    font-weight: bold;
+}
+
+#submit-button:hover {
+    background-color: #FF8C00;
+    cursor: pointer;
 }
