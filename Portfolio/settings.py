@@ -19,14 +19,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-with open('./etc/secret_key.txt') as f:
-    SECRET_KEY = f.read().strip()
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ['104.248.26.240', 'rok-klancar.com', 'www.rok-klancar.com', 'localhost']
+if 'DJANGO_DEBUG_FALSE'in os.environ:
+    DEBUG = False
+    SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+    ALLOWED_HOSTS = [os.environ['SITENAME']]
+else:
+    DEBUG = True
+    SECRET_KEY = 'insecure_key_for_dev'
+    ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['104.248.26.240', 'rok-klancar.com', 'www.rok-klancar.com', 'localhost']
 
 
 # Application definition
@@ -76,25 +77,12 @@ WSGI_APPLICATION = 'Portfolio.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 # Using PostgreSQL.
 
-# #if DEBUG:
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-#else:
 DATABASES = {
     'default': {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': 'portfoliodb',
-    'USER': 'rok',
-    'PASSWORD': 'qa72duhz',
-    'HOST': 'localhost',
-    'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 
 # Password validation
