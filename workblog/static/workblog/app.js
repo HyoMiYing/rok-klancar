@@ -86,9 +86,9 @@ function createCards(currentGamePosition) {
     if (currentGamePosition.every(item => item === 0)) {
         gameTitle.style.visibility = 'hidden';
         gameSubtitle.style.visibility = 'hidden';
-        gameForm.innerHTML = '<br>Game over, you won!' +
-        '<br> You must be really smart. Did you do it on your first try?' +
-        '<br> Please, let me know about your victory via my email, <i>rklancar@gmail.com</i>' +
+        gameForm.innerHTML = 'Game over, you won!' +
+        '<br> You must be really smart.' +
+        '<br> Did you do it on your first try?' +
         '<br> AI made by my friend, <a href="https://github.com/golobluka">Luka</a>.' +
         '<br> He is studying mathematics at University of Ljubljana' +
         '<br><br><a onclick="currentGamePosition = [1, 3, 5, 7]; createCards(currentGamePosition);">Play again</a> ';
