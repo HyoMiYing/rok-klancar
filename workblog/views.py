@@ -8,6 +8,9 @@ def projects(request):
     projects = Project.objects.all()
     return render(request, 'workblog/projects.html', {'projects':projects})
 
+def project_sticker(request):
+    return render(request, 'workblog/sticker.html', {})
+
 def get_maschine_move(request, position):
     valid_position_format = [int(x) for x in str(position)]
     liszt = move_maschine('advanced', valid_position_format)
