@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from workblog.models import *
 from django.http import JsonResponse
 from sticker import move_maschine
+from pygments.formatters import HtmlFormatter
 
 def projects(request):
     projects = Project.objects.all()
