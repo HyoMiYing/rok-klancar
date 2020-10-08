@@ -1,0 +1,76 @@
+
+/* Indent nested ul */
+ul > li {
+    margin-left: 10px;
+}
+
+/* Smartphones */
+
+@media(max-width: 500px) {
+    body {
+        margin: 3%;
+        display: grid;
+    }
+
+    #home_btn {
+        padding: 6px 7px;
+    }
+
+    .project img {
+        max-width: 400px !important;
+        padding: 0 !important;
+        display: block !important;
+        margin: auto;
+    }
+
+    #book-list {
+        padding: 1rem !important;
+    }
+}
+
+/* Project */
+.project ul li{
+    list-style: disc;
+}
+
+.project b {
+    font-weight: bold;
+}
+
+.project h1 b{
+    text-align: center !important;
+    font-size: 32px !important;
+}
+
+.project h2 {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.project p {
+    text-indent: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.project img {
+    max-height: 20rem;
+    display: inline-block;
+    padding: 2rem;
+}
+
+#book-list {
+    padding-top: 4rem;
+    vertical-align: top;
+    display: inline-block;
+}
+
+q i {
+    text-align: right;
+}
+
+#scheme {
+    display: block;
+    margin: auto;
+    max-height: 25rem;
+}
