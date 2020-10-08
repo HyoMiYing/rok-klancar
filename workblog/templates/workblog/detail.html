@@ -43,41 +43,42 @@
         <h4 class="sol">Solution</h4>
         <div class="solution">
             <pre>
-            def <span class="function-name">snail</span>(input_data):
-                output_list = []
+    def <span class="function-name">snail</span>(input_data):
+        output_list = []
 
-                <span class="keyword">try</span>:
-                    <span class="keyword">while</span> True:
-                        <span class="comment"># Append all elements of first list</span>
-                        <span class="keyword">for</span> element <span class="keyword">in</span> input_data[0]:
-                            output_list.<span class="function-name">append</span>(element)
-                        <span class="comment"># Remove first list</span>
-                        input_data.<span class="function-name">pop</span>(0)
-            
-                        <span class="comment"># Append last values of all lists that remain,
-                            but the last one</span>
-                        <span class="keyword">for</span> list <span class="keyword">in</span> input_data:
-                            <span class="keyword">if</span> list != input_data[-1]:
-                                output_list.<span class="function-name">append</span>(list.<span class="function-name">pop</span>())
-                        
-                        <span class="comment"># Reverse the last list and append it</span>
-                        input_data[-1].<span class="function-name">reverse</span>()
-                        <span class="keyword">for</span> element <span class="keyword">in</span> input_data[-1]:
-                            output_list.<span class="function-name">append</span>(element)
-                        input_data.<span class="function-name">remove</span>(input_data[-1])
-                        
-                        <span class="comment"># Append the first values of lists that remain,
-                            but reverse the lists first</span>
-                        input_data.<span class="function-name">reverse</span>()
-                        <span class="keyword">for</span> list <span class="keyword">in</span> input_data:
-                            output_list.<span class="function-name">append</span>(list[0])
-                            list.<span class="function-name">remove</span>(list[0])
-                        input_data.<span class="function-name">reverse</span>()
-                    
-                        <span class="comment"># Repeat untill the index is empty at any step</span>
+        <span class="keyword">try</span>:
+            <span class="keyword">while</span> True:
+                <span class="comment"># Append all elements of first list</span>
+                <span class="keyword">for</span> element <span class="keyword">in</span> input_data[0]:
+                    output_list.<span class="function-name">append</span>(element)
+                <span class="comment"># Remove first list</span>
+                input_data.<span class="function-name">pop</span>(0)
+
+                <span class="comment"># Append last values of all lists
+                # that remain, but the last one</span>
+                <span class="keyword">for</span> list <span class="keyword">in</span> input_data:
+                    <span class="keyword">if</span> list != input_data[-1]:
+                        output_list.<span class="function-name">append</span>(list.<span class="function-name">pop</span>())
                 
-                        <span class="keyword">except</span>:
-                <span class="keyword">return</span> output_list
+                <span class="comment"># Reverse the last list and append it</span>
+                input_data[-1].<span class="function-name">reverse</span>()
+                <span class="keyword">for</span> element <span class="keyword">in</span> input_data[-1]:
+                    output_list.<span class="function-name">append</span>(element)
+                input_data.<span class="function-name">remove</span>(input_data[-1])
+                
+                <span class="comment"># Append the first values of lists that 
+                # remain, but reverse the lists first</span>
+                input_data.<span class="function-name">reverse</span>()
+                <span class="keyword">for</span> list <span class="keyword">in</span> input_data:
+                    output_list.<span class="function-name">append</span>(list[0])
+                    list.<span class="function-name">remove</span>(list[0])
+                input_data.<span class="function-name">reverse</span>()
+            
+                <span class="comment"># Repeat untill the index is empty
+                # at any step</span>
+        
+                <span class="keyword">except</span>:
+        <span class="keyword">return</span> output_list
             </pre>
         </div>
         <div class="additional">
@@ -88,11 +89,4 @@
         </div>
     </div>
     <hr>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 {% endblock %}
