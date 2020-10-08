@@ -1,96 +1,97 @@
 {% extends 'workblog/base.html' %}
         
 {% load static %}
-{% block content %}
+{% block static_files %}
     <link rel="stylesheet" href="{% static 'workblog/sticker.css' %}">
-        
-        <article>
-            <h1><b>Sticker Project</b></h1>
-            <br>
-            <p><i>It was very confusing to dedicate so much work for such a useless project</i></p>
-            <h2>Properties</h2>
-            <br>
-            <ul>
-                <li>Made in cooperation with my mathematician friend</li>
-                <li>Encorporated Django framework</li>
-                <li>Elements of TDD (Functional tests)</li>
-                <li>Deployment is automatized with <a href="http://www.fabfile.org/">Fabric</a></li>
-                <li>There is no database, as there is no need for one</li>
-                <li>Styling is minimal</li>
-                <li>UI/UX is coded with vanilla JavaScript</li>
-                <li>AJAX enables 2 player game</li>
-            </ul>
-            <br>
-            <br>
-            <h2>Story</h2>
-            <p>
-                Rok has just finished reading the book <a href="https://www.obeythetestinggoat.com/">Test-Driven Development with Python</a> by Harry J.W. Percival. The book was very
-                helpful and beginner-friendly, as it provided clear instructions and also introduced some common programming tools and techniques 
-                (sorted by usefulness):
-            </p>
-            <img src="{% static 'workblog/tools_i_use/rok_and_book.jpg' %}" alt="Rok holding the Test Driven Development with Python book">
-            <ul id="book-list">
-                <li>Automating deployment with <a href="http://www.fabfile.org/">Fabric</a></li>
-                <li>Controlling web browser with <a href="https://selenium-python.readthedocs.io/index.html">Selenium</a></li>
-                <li>Testing Python code</li>
-                <li>Integrating git into workflow</li>
-                <li>Testing JavaScript code (with <a href="https://qunitjs.com/">QUnit</a>)</li>
-                <li><a href="http://agiledictionary.com/209/spike/">Spiking</a></li>
-                <li>'Staging server' and 'Production server'</li>
-            </ul>
-            <p>
-                Around that time Luka, Rok's friend was visiting. He had something to show. Simple game, nicknamed 'Sticker',
-                which 'is interesting only for the first 5 rounds'.
-                Rok then had the idea to turn the game into a web game and Luka agreed: one would make the Sticker game module, called <code>sticker.py</code>
-                and the other would make a Django web project, which would use <code>sticker.py</code>.
-            </p>
-            <p>
-                Rok already had experience with delegating programming tasks and writing specifications. 
-                They sat down and decribed data that will enter and exit from Luka's module.
-            </p>
-            <img id="scheme" src="{% static 'workblog/tools_i_use/program_scheme.png' %}" alt="Scheme of modules in the project">
-            <p>
-                After that, each of them went to work. Rok attempted to code the whole project using TDD. It didn't matter if there was no Sticker module yet, as he could always just use 
-                mock data. So he tried to do that for 2 weeks. Following the TDD methodology was very hard whenever the project was different from the project
-                done in the book. Writing the unit tests was the hardest part, but Rok kept at it, as he desired to apply the newly learned skills. He started to learn from
-                other resources.
-                He spent several days studying other material on TDD (Book by Kent Beck, <a href="https://www.youtube.com/watch?v=AoIfc5NwRks">uncle Bob's video</a>,
-                <a href="https://www.youtube.com/watch?v=EZ05e7EMOLM">Ian Cooper's talk</a>, etc.)
-            </p>
-            <p>   
-                But after some time Rok had to admit the defeat. He was just too unexperienced to move forward with TDD.
-                Out of frustration, he started the whole project from the beginning, but still keeping some things he did understand (Functional tests, deployment with Fabric).
-                Rok worked for 3 - 6 hours per day (but not on weekends), and after 2 weeks the project was deployed.
-            </p>
-            <p>
-                However, the project had a major flaw. 2 player game mode was highly unpractical, as the players would have to meet in another service, 
-                share the game URL, and on top of that both be online at the same time. Rok decided to improve this. He was brainstorming, but the plans changed 
-                every day. It was very confusing to dedicate so much work for such a useless project.
-            </p>
-            <p>
-                Finally, Rok finished the project, despite its disadvantages. He showed it to a senior programmer who said:
-                 'Why are you making AJAX call every 0.5 seconds, when you can just use the web sockets?'.
-            </p>
-            <p>
-                Rok did some research and found out, that <a href="https://channels.readthedocs.io/en/latest/">Django channels</a> is officialy
-                <a href="https://www.djangoproject.com/weblog/2016/sep/09/channels-adopted-official-django-project/">part of the 
-                Django project</a> and it enables the use of web sockets. He began studying the technology with the
-                goal to apply it to the Sticker project. He realized, that the use of web sockets would make his project much simpler and even better to use!
-            </p>
-            <p>
-                But right after setting up and starting to mess with the Channels, Rok
-                had to make a break from programming, since he had to study for his Matura exam, as it
-                included 4 years worth of subject matter for 5 different subjects.
-            </p>
-            <p>
-                After returning to programming, he used the AI part of Luka's module and written some JavaScript code.
-                That is how the Sticker game on the <a href="https://www.rok-klancar.com#main-form">homepage of this website</a> got to be.
-                <i>It took one day to code it</i> and Rok couldn't wrap his head around the fact, that
-                he needed 1 month before to do basically the same thing.
-            </p>
-            <p>
-                The game on homepage runs entirely vanilla JS. There is only some JQuery code that retrieves information from a specific view about
-                the next 'machine move'.
-            </p>
-        </article>
+{% endblock %}
+{% block content %}
+<div class="project">
+    <h1><b>Sticker Project</b></h1>
+    <br>
+    <p><i>It was very confusing to dedicate so much work for such a useless project</i></p>
+    <h2>Properties</h2>
+    <br>
+    <ul>
+        <li>Made in cooperation with my mathematician friend</li>
+        <li>Encorporated Django framework</li>
+        <li>Elements of TDD (Functional tests)</li>
+        <li>Deployment is automatized with <a href="http://www.fabfile.org/">Fabric</a></li>
+        <li>There is no database, as there is no need for one</li>
+        <li>Styling is minimal</li>
+        <li>UI/UX is coded with vanilla JavaScript</li>
+        <li>AJAX enables 2 player game</li>
+    </ul>
+    <br>
+    <br>
+    <h2>Story</h2>
+    <p>
+        Rok has just finished reading the book <a href="https://www.obeythetestinggoat.com/">Test-Driven Development with Python</a> by Harry J.W. Percival. The book was very
+        helpful and beginner-friendly, as it provided clear instructions and also introduced some common programming tools and techniques 
+        (sorted by usefulness):
+    </p>
+    <img src="{% static 'workblog/tools_i_use/tdd_book.jpg' %}" alt="Rok holding the Test Driven Development with Python book">
+    <ul id="book-list">
+        <li>Automating deployment with <a href="http://www.fabfile.org/">Fabric</a></li>
+        <li>Controlling web browser with <a href="https://selenium-python.readthedocs.io/index.html">Selenium</a></li>
+        <li>Testing Python code</li>
+        <li>Integrating git into workflow</li>
+        <li>Testing JavaScript code (with <a href="https://qunitjs.com/">QUnit</a>)</li>
+        <li><a href="http://agiledictionary.com/209/spike/">Spiking</a></li>
+        <li>'Staging server' and 'Production server'</li>
+    </ul>
+    <p>
+        Around that time Luka, Rok's friend was visiting. He had something to show. Simple game, nicknamed 'Sticker',
+        which 'is interesting only for the first 5 rounds'.
+        Rok then had the idea to turn the game into a web game and Luka agreed: one would make the Sticker game module, called <code>sticker.py</code>
+        and the other would make a Django web project, which would use <code>sticker.py</code>.
+    </p>
+    <p>
+        Rok already had experience with delegating programming tasks and writing specifications. 
+        They sat down and decribed data that will enter and exit from Luka's module.
+    </p>
+    <img id="scheme" src="{% static 'workblog/tools_i_use/program_scheme.png' %}" alt="Scheme of modules in the project">
+    <p>
+        After that, each of them went to work. Rok attempted to code the whole project using TDD. It didn't matter if there was no Sticker module yet, as he could always just use 
+        mock data. So he tried to do that for 2 weeks. Following the TDD methodology was very hard whenever the project was different from the project
+        done in the book. Writing the unit tests was the hardest part, but Rok kept at it, as he desired to apply the newly learned skills. He started to learn from
+        other resources.
+        He spent several days studying other material on TDD (Book by Kent Beck, <a href="https://www.youtube.com/watch?v=AoIfc5NwRks">uncle Bob's video</a>,
+        <a href="https://www.youtube.com/watch?v=EZ05e7EMOLM">Ian Cooper's talk</a>, etc.)
+    </p>
+    <p>   
+        But after some time Rok had to admit the defeat. He was just too unexperienced to move forward with TDD.
+        Out of frustration, he started the whole project from the beginning, but still keeping some things he did understand (Functional tests, deployment with Fabric).
+        Rok worked for 3 - 6 hours per day (but not on weekends), and after 2 weeks the project was deployed.
+    </p>
+    <p>
+        However, the project had a major flaw. 2 player game mode was highly unpractical, as the players would have to meet in another service, 
+        share the game URL, and on top of that both be online at the same time. Rok decided to improve this. He was brainstorming, but the plans changed 
+        every day. It was very confusing to dedicate so much work for such a useless project.
+    </p>
+    <p>
+        Finally, Rok finished the project, despite its disadvantages. He showed it to a senior programmer who said:
+            'Why are you making AJAX call every 0.5 seconds, when you can just use the web sockets?'.
+    </p>
+    <p>
+        Rok did some research and found out, that <a href="https://channels.readthedocs.io/en/latest/">Django channels</a> is officialy
+        <a href="https://www.djangoproject.com/weblog/2016/sep/09/channels-adopted-official-django-project/">part of the 
+        Django project</a> and it enables the use of web sockets. He began studying the technology with the
+        goal to apply it to the Sticker project. He realized, that the use of web sockets would make his project much simpler and even better to use!
+    </p>
+    <p>
+        But right after setting up and starting to mess with the Channels, Rok
+        had to make a break from programming, since he had to study for his Matura exam, as it
+        included 4 years worth of subject matter for 5 different subjects.
+    </p>
+    <p>
+        After returning to programming, he used the AI part of Luka's module and written some JavaScript code.
+        That is how the Sticker game on the <a href="https://www.rok-klancar.com#main-form">homepage of this website</a> got to be.
+        <i>It took one day to code it</i> and Rok couldn't wrap his head around the fact, that
+        he needed 1 month before to do basically the same thing.
+    </p>
+    <p>
+        The game on homepage runs entirely vanilla JS. There is only some JQuery code that retrieves information from a specific view about
+        the next 'machine move'.
+    </p>
+</div>
 {% endblock %}
