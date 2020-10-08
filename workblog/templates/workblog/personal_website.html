@@ -1,0 +1,48 @@
+{% extends 'workblog/base.html' %}
+        
+{% load static %}
+{% block static_files %}
+    <link rel="stylesheet" href="{% static 'workblog/sticker.css' %}">
+{% endblock %}
+{% block content %}
+<div class="project">
+    <h1><b>rok-klancar.com</b></h1>
+    <br>
+    <p><i>My personal website</i></p>
+    <ol style="list-style-type: none !important;">
+        <li><a href="/">Website</a></li>
+        <li><a href="https://github.com/HyoMiYing/2020personal-website">GitHub</a></li>
+    </ol>
+    <br>
+    <h2>Properties</h2>
+    <br>
+    <ul>
+        <li>First (usable) project</li>
+        <li>Done right after learning through the Django tutorial</li>
+        <li>Basic functionality is to represent oneself</li>
+        <li>Modified seveal times</li>
+        <li>Spending lots of time on a project: coming back to it, changing it, improving it</li>
+    </ul>
+    <br>
+    <br>
+    <h2>Story</h2>
+    <p>
+        Rok has just finished the official <a href="https://www.djangoproject.com/">Django tutorial</a>, and had decided
+        to finally put his <b>coding skills to good use</b>.
+    </p>
+    <p>
+        He always wanted a nice personal website, but didn't like the websites made using wordpress. He had <b>designed it by
+            himself</b>, taking example from websites on the internet that he liked.
+    </p>
+    <p>
+        It was also the first time he <b>deployed</b> a website (first it was running on Heroku, but now it's on Digital Ocean's droplet).
+    </p>
+    <p>
+        The website has been (since april 2019) <b>changed many times</b> (at least 3 major reworks). This gave Rok a nice refernce of working on a project for long
+        periods of time.
+        That means a lot of things: Coming back to see, that you don't understand what a specific piece of code does. Or <b>learning to
+        work with version control</b> software for not just storing your data.
+        Sometimes you need to retieve a file, or read the log to see when has something been done, or make a new branch to test something out.
+    </p>
+</div>
+{% endblock %}

@@ -10,6 +10,9 @@ def project_sticker(request):
 def project_smetnaki(request):
     return render(request, 'workblog/smetnaki.html', {})
 
+def project_personal_website(request):
+    return render(request, 'workblog/personal_website.html', {})
+
 def get_maschine_move(request, position):
     valid_position_format = [int(x) for x in str(position)]
     liszt = move_maschine('advanced', valid_position_format)

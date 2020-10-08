@@ -18,7 +18,7 @@
     <br>
     <ul>
         <li>Made in cooperation with my mathematician friend</li>
-        <li>Encorporated Django framework</li>
+        <li>Django framework</li>
         <li>Elements of TDD (Functional tests)</li>
         <li>Deployment is automatized with <a href="http://www.fabfile.org/">Fabric</a></li>
         <li>There is no database, as there is no need for one</li>
@@ -45,43 +45,43 @@
         <li>'Staging server' and 'Production server'</li>
     </ul>
     <p>
-        Around that time Luka, Rok's friend was visiting. He had something to show. Simple game, nicknamed 'Sticker',
+        Around that time Luka, Rok's friend was visiting. He had <b>something to show</b>. Simple game, nicknamed 'Sticker',
         which 'is interesting only for the first 5 rounds'.
-        Rok then had the idea to turn the game into a web game and Luka agreed: one would make the Sticker game module, called <code>sticker.py</code>
+        Rok then had the idea to <b>turn the game into a web game</b> and Luka agreed: one would make the Sticker game module, called <code>sticker.py</code>
         and the other would make a Django web project, which would use <code>sticker.py</code>.
     </p>
     <p>
-        Rok already had experience with delegating programming tasks and writing specifications. 
+        Rok already had <b>experience with delegating programming tasks and writing specifications</b>. 
         They sat down and decribed data that will enter and exit from Luka's module.
     </p>
     <img id="scheme" src="{% static 'workblog/tools_i_use/program_scheme.png' %}" alt="Scheme of modules in the project">
     <p>
-        After that, each of them went to work. Rok attempted to code the whole project using TDD. It didn't matter if there was no Sticker module yet, as he could always just use 
+        After that, each of them went to work. Rok <b>attempted to code the whole project using TDD</b>. It didn't matter if there was no Sticker module yet, as he could always just use 
         mock data. So he tried to do that for 2 weeks. Following the TDD methodology was very hard whenever the project was different from the project
         done in the book. Writing the unit tests was the hardest part, but Rok kept at it, as he desired to apply the newly learned skills. He started to learn from
         other resources.
         He spent several days studying other material on TDD (Book by Kent Beck, <a href="https://www.youtube.com/watch?v=AoIfc5NwRks">uncle Bob's video</a>,
         <a href="https://www.youtube.com/watch?v=EZ05e7EMOLM">Ian Cooper's talk</a>, etc.)
     </p>
-    <p>   
-        But after some time Rok had to admit the defeat. He was just too unexperienced to move forward with TDD.
+    <p>
+        But after some time Rok had to admit the defeat. He was just <b>too unexperienced</b> to move forward with TDD.
         Out of frustration, he started the whole project from the beginning, but still keeping some things he did understand (Functional tests, deployment with Fabric).
         Rok worked for 3 - 6 hours per day (but not on weekends), and after 2 weeks the project was deployed.
     </p>
     <p>
-        However, the project had a major flaw. 2 player game mode was highly unpractical, as the players would have to meet in another service, 
+        However, the project had a major flaw. 2 player game mode was <b>highly unpractical</b>, as the players would have to meet in another service, 
         share the game URL, and on top of that both be online at the same time. Rok decided to improve this. He was brainstorming, but the plans changed 
         every day. It was very confusing to dedicate so much work for such a useless project.
     </p>
     <p>
         Finally, Rok finished the project, despite its disadvantages. He showed it to a senior programmer who said:
-            'Why are you making AJAX call every 0.5 seconds, when you can just use the web sockets?'.
+          <i>'Why are you making AJAX call every 0.5 seconds, when you can just use the web sockets?'</i>.
     </p>
     <p>
         Rok did some research and found out, that <a href="https://channels.readthedocs.io/en/latest/">Django channels</a> is officialy
         <a href="https://www.djangoproject.com/weblog/2016/sep/09/channels-adopted-official-django-project/">part of the 
         Django project</a> and it enables the use of web sockets. He began studying the technology with the
-        goal to apply it to the Sticker project. He realized, that the use of web sockets would make his project much simpler and even better to use!
+        goal to apply it to the Sticker project. He realized, that the <b>use of web sockets would make his project much simpler and better to use!</b>
     </p>
     <p>
         But right after setting up and starting to mess with the Channels, Rok
