@@ -4,10 +4,6 @@ from workblog.models import *
 from django.http import JsonResponse
 from sticker import move_maschine
 
-def projects(request):
-    projects = Project.objects.all()
-    return render(request, 'workblog/projects.html', {'projects':projects})
-
 def project_sticker(request):
     return render(request, 'workblog/sticker.html', {})
 
