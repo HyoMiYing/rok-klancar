@@ -1,27 +1,24 @@
 from django.db import models
-from pygments import lexers, highlight, formatters
 
-python_lexer = lexers.get_lexer_by_name('python')
+#class DailyKata(models.Model):
+#    pub_date = models.DateTimeField()
+#    kata_name = models.CharField(max_length = 500)
+#    kata_link = models.URLField()
+#    kata_description = models.TextField()
+#    my_code = models.TextField()
+#    highlighted_code = models.TextField(editable=False)
 
-class DailyKata(models.Model):
-    pub_date = models.DateTimeField()
-    kata_name = models.CharField(max_length = 500)
-    kata_link = models.URLField()
-    kata_description = models.TextField()
-    my_code = models.TextField()
-    highlighted_code = models.TextField(editable=False)
+#    def __str__(self):
+#        return self.kata_name
 
-    def __str__(self):
-        return self.kata_name
+#    def save(self, *args, **kwargs):
+#        self.highlighted_code = self.highlight()
+#        super(DailyKata, self).save(*args, **kwargs)
 
-    def save(self, *args, **kwargs):
-        self.highlighted_code = self.highlight()
-        super(DailyKata, self).save(*args, **kwargs)
-
-    def highlight(self):
-        return highlight(self.my_code,
-                         python_lexer,
-                         formatters.HtmlFormatter(linenos=False))
+#    def highlight(self):
+#        return highlight(self.my_code,
+#                         python_lexer,
+#                         formatters.HtmlFormatter(linenos=False))
 
 class Project(models.Model):
     title = models.CharField(max_length = 50)
