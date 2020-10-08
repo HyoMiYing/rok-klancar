@@ -7,6 +7,9 @@ from sticker import move_maschine
 def project_sticker(request):
     return render(request, 'workblog/sticker.html', {})
 
+def project_smetnaki(request):
+    return render(request, 'workblog/smetnaki.html', {})
+
 def get_maschine_move(request, position):
     valid_position_format = [int(x) for x in str(position)]
     liszt = move_maschine('advanced', valid_position_format)

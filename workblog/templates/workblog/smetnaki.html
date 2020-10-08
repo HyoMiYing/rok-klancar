@@ -1,0 +1,45 @@
+{% extends 'workblog/base.html' %}
+        
+{% load static %}
+{% block static_files %}
+    <link rel="stylesheet" href="{% static 'workblog/sticker.css' %}">
+{% endblock %}
+{% block content %}
+<div class="project">
+    <h1><b>Smetnaki website</b></h1>
+    <br>
+    <p><i>My band's calling card</i></p>
+    <ol style="list-style-type: none !important;">
+        <li><a href="https://www.smetnaki.si">Website</a></li>
+        <li><a href="https://github.com/HyoMiYing/smetnaki">GitHub</a></li>
+    </ol>
+    <br>
+    <h2>Properties</h2>
+    <br>
+    <ul>
+        <li>Finished in less than a week</li>
+        <li>Heavy use of <a href="https://www.figma.com/">Figma</a> for design</li>
+        <li>Integration of internationalization and localization, so everyone can understand</li>
+        <li>Easy to add upcoming concerts</li>
+    </ul>
+    <br>
+    <br>
+    <h2>Story</h2>
+    <p>
+        Smetnaki band had presence only on social networks but it didn't have its own website. 
+    </p>
+    <p>
+        When saxophone player's father made a cool design for a concert poster, Rok was inspired
+        by it and created the website.
+    </p>
+    <img src="{% static 'workblog/tools_i_use/smetnaki_page.png' %}" alt="Image from the smetnaki websites's landing page">
+    <p>
+        Rok started with designing the UI of the website in Figma. That is also how he spent
+        the majority of the time on the project.
+    </p>
+    <p>
+        Previously he had already made a project in Django, where he had to use localization and internationalization
+        so the Smetnaki was a nice example where this knowledge was proven usable.
+    </p>
+</div>
+{% endblock %}
