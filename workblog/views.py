@@ -24,8 +24,7 @@ def index(request):
     return render(request, 'workblog/index.html')
 
 def blog(request):
-    dailys = DailyKata.objects.all().order_by('-pub_date')
-    return render(request, 'workblog/detail.html', {'dailys': dailys})
+    return render(request, 'workblog/detail.html', {})
 
 def resume(request):
     return render(request, 'workblog/resume.html', {})
