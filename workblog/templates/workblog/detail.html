@@ -8,6 +8,36 @@
 {% endblock %}
 
 {% block content %}
+<div class="article" id="13-october">
+    <div class="article-title">
+        <h2><a href="https://www.codewars.com/kata/52597aa56021e91c93000cb0">Moving Zeroes To The End</a></h2>
+        <h3>13th of October</h3>
+    </div>
+    <br>
+    <h4>Description</h4>
+    <div class="description">
+        <p>Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.</p>
+        <pre class="unmarked">
+moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]
+        </pre>
+    </div>
+    <h4 class="sol">Solution</h4>
+    <div class="solution">
+        <pre>
+    def <span class="function-name">move_zeroes</span>(array):   
+        return_array = []
+        zeroes = []
+        <span class="keyword">for</span> index, element <span class="keyword">in</span> <span class="function-name">enumerate</span>(array):
+        <span class="keyword">if</span> (element == 0) <span class="keyword">and</span> element <span class="keyword">is</span> <span class="keyword">not</span> False:
+                zeroes.<span class="function-name">append</span>(0)
+            <span class="keyword">else</span>:
+                return_array.<span class="function-name">append</span>(element)
+        return_array.<span class="function-name">extend</span>(zeroes)
+        <span class="keyword">return</span> return_array
+        </pre>
+    </div>
+</div>
+<hr>
     <div class="article" id="3-october">
         <div class="article-title">
             <h2><a href="https://www.codewars.com/kata/521c2db8ddc89b9b7a0000c1/discuss">Snail kata</a></h2>
@@ -84,36 +114,6 @@
                 This exercise gave me somethin to think about. I've made a <a href="https://www.youtube.com/watch?v=-BOOzjcFq-0&t=1s">video</a> where I explain the exercise, go through
                 my solution, and then debug it.
             </p>
-        </div>
-    </div>
-    <hr>
-    <div class="article" id="13-october">
-        <div class="article-title">
-            <h2><a href="https://www.codewars.com/kata/52597aa56021e91c93000cb0">Moving Zeroes To The End</a></h2>
-            <h3>13th of October</h3>
-        </div>
-        <br>
-        <h4>Description</h4>
-        <div class="description">
-            <p>Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.</p>
-            <pre class="unmarked">
-    moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]
-            </pre>
-        </div>
-        <h4 class="sol">Solution</h4>
-        <div class="solution">
-            <pre>
-        def <span class="function-name">move_zeroes</span>(array):   
-            return_array = []
-            zeroes = []
-            <span class="keyword">for</span> index, element <span class="keyword">in</span> <span class="function-name">enumerate</span>(array):
-            <span class="keyword">if</span> (element == 0) <span class="keyword">and</span> element <span class="keyword">is</span> <span class="keyword">not</span> False:
-                    zeroes.<span class="function-name">append</span>(0)
-                <span class="keyword">else</span>:
-                    return_array.<span class="function-name">append</span>(element)
-            return_array.<span class="function-name">extend</span>(zeroes)
-            <span class="keyword">return</span> return_array
-            </pre>
         </div>
     </div>
     <hr>
